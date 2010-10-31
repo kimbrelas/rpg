@@ -1,0 +1,7 @@
+rpgTerrain:
+  Grass:
+    traversable: 1
+    class: grass
+  Water:
+    traversable: 0
+    class: water

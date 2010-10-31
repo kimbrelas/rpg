@@ -1,0 +1,18 @@
+div.grid_space {
+  float: left;
+  width: 100px;
+  height: 100px;
+  text-align:center;
+}
+
+div#grid {
+  width: 1100px;
+}
+
+div.grass {
+  background-color: green;
+}
+
+div.water {
+  background-color: blue;
+}

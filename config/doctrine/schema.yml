@@ -1,0 +1,36 @@
+rpgGrid:
+  columns:
+    title: string(255)
+
+rpgGridSpace:
+  columns:
+    grid_id: integer
+    terrain_id: integer
+    x: integer
+    y: integer
+  relations:
+    Grid:
+      foreignAlias: GridSpaces
+      local: grid_id
+      class: rpgGrid
+    Terrain:
+      foreignAlias: GridSpaces
+      local: terrain_id
+      class: rpgTerrain
+
+rpgTerrain:
+  columns:
+    traversable:
+      type: boolean
+      default: true
+    class: string(255)
+
+rpgPlayer:
+  columns:
+    name: string(10)
+    grid_space_id: integer
+  relations:
+    GridSpace:
+      foreignAlias: Players
+      local: grid_space_id
+      class: rpgGridSpace
