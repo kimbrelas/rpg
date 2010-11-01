@@ -5,3 +5,6 @@ rpgTerrain:
   Water:
     traversable: 0
     class: water
+  Border:
+    traversable: 0
+    class: border

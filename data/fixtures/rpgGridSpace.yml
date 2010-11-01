@@ -1,14 +1,14 @@
-rpgGridSpace:
-<?php for($y = -100; $y <= 100; $y++): ?>
-<?php for($x = -100; $x <= 100; $x++): ?>
-  Overworld<?php echo $x.$y; ?>:
+rpgGridSpace<?php $i = 1 ?>:
+<?php for($y = -25; $y <= 25; $y++): ?>
+<?php for($x = -25; $x <= 25; $x++): ?>
+  Overworld<?php echo $x.'_'.$y; ?>:
     Grid: Overworld
-    y: <?php echo $y."\n"; ?>
     x: <?php echo $x."\n"; ?>
-    Terrain: <?php echo array_rand(array('Grass' => 0, 'Water' => 1))."\n" ?>
+    y: <?php $i++; echo $y."\n"; ?>
+    Terrain: <?php echo ($x >= 20 || $y >= 20 || $x <= -20 || $y <= -20) ? "Border\n" : array_rand(array('Grass' => 0, 'Water' => 1))."\n" ?>
 <?php endfor; ?>
 <?php endfor; ?>
-  Overworld00:
+  Overworld0_0:
     Grid: Overworld
     x: 0
     y: 0

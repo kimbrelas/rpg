@@ -10,9 +10,18 @@ div#grid {
 }
 
 div.grass {
-  background-color: green;
+  background-image: url('/images/grass.jpg');
 }
 
 div.water {
-  background-color: blue;
+  background-image: url('/images/water.jpg');
+}
+
+div.border { 
+  background-image: url('/images/mountain.jpg');
+}
+
+a.disabled {
+  opacity: .25;
+  cursor: default;
 }

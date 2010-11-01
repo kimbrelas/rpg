@@ -12,7 +12,7 @@
  */
 class rpgPlayer extends BaserpgPlayer
 {
-  public function getGridSpaces($radius = 2)
+  public function getGridSpaces($radius = 1)
   {
     $grid_space = $this->GridSpace;
     
@@ -22,7 +22,27 @@ class rpgPlayer extends BaserpgPlayer
       ->andWhere('x <= ?', $grid_space->x + $radius)
       ->andWhere('y >= ?', $grid_space->y - $radius)
       ->andWhere('y <= ?', $grid_space->y + $radius)
-      ->orderBy('x DESC, y ASC')
+      ->orderBy('y DESC, x ASC')
       ->execute();
+  }
+  
+  public function getLeft()
+  {
+    return Doctrine_Query::create()->from('rpgGridSpace')->where('x = ?', $this->GridSpace->x - 1)->andWhere('y = ?', $this->GridSpace->y)->fetchOne();
+  }
+  
+  public function getRight()
+  {
+    return Doctrine_Query::create()->from('rpgGridSpace')->where('x = ?', $this->GridSpace->x + 1)->andWhere('y = ?', $this->GridSpace->y)->fetchOne();
+  }
+  
+  public function getUp()
+  {
+    return Doctrine_Query::create()->from('rpgGridSpace')->where('x = ?', $this->GridSpace->x)->andWhere('y = ?', $this->GridSpace->y + 1)->fetchOne();
+  }
+  
+  public function getDown()
+  {
+    return Doctrine_Query::create()->from('rpgGridSpace')->where('x = ?', $this->GridSpace->x)->andWhere('y = ?', $this->GridSpace->y - 1)->fetchOne();
   }
 }
