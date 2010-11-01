@@ -28,9 +28,25 @@ rpgTerrain:
 rpgPlayer:
   columns:
     name: string(10)
+    current_unit_id: integer
+  relations:
+    CurrentUnit:
+      foreignAlias: CurrentPlayer
+      local: current_unit_id
+      class: rpgUnit
+
+rpgUnit:
+  columns:
+    name: string(10)
+    player_id: integer
     grid_space_id: integer
+    image: string(255)
   relations:
     GridSpace:
       foreignAlias: Players
       local: grid_space_id
       class: rpgGridSpace
+    Player:
+      foreignAlias: Units
+      local: player_id
+      class: rpgPlayer

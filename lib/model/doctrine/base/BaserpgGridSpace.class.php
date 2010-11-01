@@ -63,7 +63,7 @@ abstract class BaserpgGridSpace extends sfDoctrineRecord
              'local' => 'terrain_id',
              'foreign' => 'id'));
 
-        $this->hasMany('rpgPlayer as Players', array(
+        $this->hasMany('rpgUnit as Players', array(
              'local' => 'id',
              'foreign' => 'grid_space_id'));
     }

@@ -1,0 +1,9 @@
+rpgUnit:
+  Link:
+    name: Link
+    GridSpace: Overworld0_0
+    image: link.gif
+  Mario:
+    name: Mario
+    GridSpace: Overworld0_1
+    image: mario.jpg

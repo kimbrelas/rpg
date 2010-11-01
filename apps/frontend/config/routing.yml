@@ -9,6 +9,10 @@ homepage:
 move:
   url:   /move
   param: { module: default, action: move }
+  
+select_unit:
+  url:   /select-unit
+  param: { module: default, action: selectUnit }
 
 # generic rules
 # please, remove them by adding more specific rules

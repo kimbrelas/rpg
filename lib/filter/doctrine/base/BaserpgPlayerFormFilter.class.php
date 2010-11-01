@@ -13,13 +13,13 @@ abstract class BaserpgPlayerFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'name'          => new sfWidgetFormFilterInput(),
-      'grid_space_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('GridSpace'), 'add_empty' => true)),
+      'name'            => new sfWidgetFormFilterInput(),
+      'current_unit_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('CurrentUnit'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'name'          => new sfValidatorPass(array('required' => false)),
-      'grid_space_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('GridSpace'), 'column' => 'id')),
+      'name'            => new sfValidatorPass(array('required' => false)),
+      'current_unit_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('CurrentUnit'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('rpg_player_filters[%s]');
@@ -39,9 +39,9 @@ abstract class BaserpgPlayerFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'            => 'Number',
-      'name'          => 'Text',
-      'grid_space_id' => 'ForeignKey',
+      'id'              => 'Number',
+      'name'            => 'Text',
+      'current_unit_id' => 'ForeignKey',
     );
   }
 }

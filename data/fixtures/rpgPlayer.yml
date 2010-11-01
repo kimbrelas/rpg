@@ -1,4 +1,5 @@
 rpgPlayer:
   Adam:
     name: Adam
-    GridSpace: Overworld0_0
+    CurrentUnit: Link
+    Units: [Link,Mario]

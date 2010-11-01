@@ -1,8 +1,12 @@
+a {
+  color: blue;
+}
+
 div.grid_space {
   float: left;
   width: 100px;
   height: 100px;
-  text-align:center;
+  text-align: center;
 }
 
 div#grid {
@@ -10,18 +14,23 @@ div#grid {
 }
 
 div.grass {
-  background-image: url('/images/grass.jpg');
+  background-image: url('/images/terrain/grass.jpg');
 }
 
 div.water {
-  background-image: url('/images/water.jpg');
+  background-image: url('/images/terrain/water.jpg');
 }
 
 div.border { 
-  background-image: url('/images/mountain.jpg');
+  background-image: url('/images/terrain/mountain.jpg');
 }
 
 a.disabled {
   opacity: .25;
   cursor: default;
+}
+
+img.unit {
+  width: 50px;
+  margin-top: 15px;
 }

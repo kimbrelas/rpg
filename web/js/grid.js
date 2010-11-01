@@ -10,6 +10,18 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('a.select_unit').live('click', function() {
+    if($(this).hasClass('disabled'))
+    {
+      return false;
+    }
+    
+    $('div#grid').load($(this).attr('href'));
+    return false;
+  });
+});
+
 $(document).keypress(function(e) {
   switch(e.keyCode) {
     case 37:
